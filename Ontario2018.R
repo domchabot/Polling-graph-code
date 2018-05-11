@@ -97,7 +97,7 @@ polls <- mdata
 # LastElection = data.frame(Date, Party, Popular_Support, Error)
 
 # This election -- Add after election to get final election result points
-next_election_date_value <- 43229 # 2018/06/07 
+next_election_date_value <- 43258 # 2018/06/07 
 #Date = rep.int(42211, 5)
 #Party = c('Liberal','PC','NDP','Green','Other')
 #Popular_Support = c(39.6,18.9,30.6,6,3.9)
