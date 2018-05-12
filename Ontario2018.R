@@ -172,12 +172,12 @@ next_election_date_value <- 43258 # 2018/06/07
 start_date_value <- campaign_start_date_value
 end_date_value <- next_election_date_value
 
-date_labels <- as.character(seq(as.Date("2018/05/09"), as.Date("2018/06/07"), by=77))
+date_labels <- as.character(seq(as.Date("2018/05/09"), as.Date("2018/06/07"), by=29))
 date_labels[1] <- "Election\n2018/05/09"
 date_labels[length(date_labels)] <- "Election\n2018/06/07"
 
-min_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=11)
-maj_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=77)
+min_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=4)
+maj_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=29)
 
 # X-axis
 plot <- plot + scale_x_continuous(name = "Date", limits=c(start_date_value, end_date_value), 
