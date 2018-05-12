@@ -108,7 +108,7 @@ next_election_date_value <- 43258 # 2018/06/07
 # election_polls <- polls[polls$Date > (last_election_date_value + 10),]
 #election_polls <- polls
 
-colors <- c("red", "blue", "orange", "green3", "turquoise4")
+colors <- c("red", "blue", "orange", "green3", "turquoise4", "red", "blue")
 
 library(ggplot2)
 
@@ -173,10 +173,10 @@ start_date_value <- campaign_start_date_value
 end_date_value <- next_election_date_value
 
 date_labels <- as.character(seq(as.Date("2018/05/09"), as.Date("2018/06/07"), by=29))
-date_labels[1] <- "Election\n2018/05/09"
+date_labels[1] <- "2018/05/09"
 date_labels[length(date_labels)] <- "Election\n2018/06/07"
 
-min_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=4)
+min_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=1)
 maj_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=29)
 
 # X-axis
@@ -190,7 +190,7 @@ plot <- plot + theme(axis.text.x = element_text(size = 11, vjust=0.5, hjust=0, a
 plot <- plot + theme(axis.title.x = element_blank())
 
 # Y-axis
-plot <- plot + scale_y_continuous(name = "% Popular Support", lim=c(0,56), expand=c(0,0)) 
+plot <- plot + scale_y_continuous(name = "% Popular Support", lim=c(0,50), expand=c(0,0)) 
 plot <- plot + theme(axis.text.y = element_text(size = 11))
 plot <- plot + theme(axis.title.y = element_text(size = 11, angle = 90, colour="#333333"))
 
