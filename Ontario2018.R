@@ -6,7 +6,7 @@ library(stringr)
 # PARAMETERS FOR PLOT GENERATION:
 
 # How many nearest data points to use for the local fit 
-num_data_points = 25
+num_data_points = 2
 
 
 theurl <- getURL("https://en.wikipedia.org/wiki/Ontario_general_election,_2018", ssl.verifyPeer=FALSE)
@@ -108,7 +108,7 @@ next_election_date_value <- 43258 # 2018/06/07
 # election_polls <- polls[polls$Date > (last_election_date_value + 10),]
 #election_polls <- polls
 
-colors <- c("red", "blue", "orange", "green3", "turquoise4", "red", "blue")
+colors <- c("red", "blue", "orange", "green3", "#333333")
 
 library(ggplot2)
 
@@ -122,7 +122,7 @@ svg(filename="Ontario2018PollsPlot.svg",
 )
 
 
-plot <- ggplot(election_polls) 
+plot <- ggplot(polls) 
 plot2 <- plot +  geom_point(main_aes)
 plot2 <- plot2 + scale_colour_manual(values = colors)
 
@@ -172,12 +172,12 @@ next_election_date_value <- 43258 # 2018/06/07
 start_date_value <- campaign_start_date_value
 end_date_value <- next_election_date_value
 
-date_labels <- as.character(seq(as.Date("2018/05/09"), as.Date("2018/06/07"), by=29))
+date_labels <- as.character(seq(as.Date("2018/05/09"), as.Date("2018/06/07"), by=1))
 date_labels[1] <- "2018/05/09"
 date_labels[length(date_labels)] <- "Election\n2018/06/07"
 
 min_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=1)
-maj_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=29)
+maj_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=1)
 
 # X-axis
 plot <- plot + scale_x_continuous(name = "Date", limits=c(start_date_value, end_date_value), 
