@@ -6,8 +6,7 @@ library(stringr)
 # PARAMETERS FOR PLOT GENERATION:
 
 # How many nearest data points to use for the local fit 
-num_data_points = 3
-
+num_data_points = 4
 
 theurl <- getURL("https://en.wikipedia.org/wiki/Ontario_general_election,_2018", ssl.verifyPeer=FALSE)
 tables <- readHTMLTable(theurl)
@@ -98,9 +97,9 @@ polls <- mdata
 
 # This election -- Add after election to get final election result points
 next_election_date_value <- 43258 # 2018/06/07 
-#Date = rep.int(42211, 5)
+#Date = rep.int(43258, 5)
 #Party = c('Liberal','PC','NDP','Green','Other')
-#Popular_Support = c(39.6,18.9,30.6,6,3.9)
+#Popular_Support = c(0,0,0,0,0)
 #Error = rep.int(0,5)
 #ThisElection = data.frame(Date, Party, Popular_Support, Error)
 
@@ -172,9 +171,9 @@ next_election_date_value <- 43258 # 2018/06/07
 start_date_value <- campaign_start_date_value
 end_date_value <- next_election_date_value
 
-date_labels <- as.character(seq(as.Date("2018/05/09"), as.Date("2018/06/07"), by=1))
-date_labels[1] <- "2018/05/09"
-date_labels[length(date_labels)] <- "Election\n2018/06/07"
+date_labels <- as.character(seq(as.Date("2018-05-09"), as.Date("2018-06-07"), by=1))
+date_labels[1] <- "2018-05-09"
+date_labels[length(date_labels)] <- "Election\n2018-06-07"
 
 min_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=1)
 maj_gridlines <- seq(campaign_start_date_value, next_election_date_value, by=1)
