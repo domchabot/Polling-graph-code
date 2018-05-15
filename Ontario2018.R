@@ -6,14 +6,14 @@ library(stringr)
 # PARAMETERS FOR PLOT GENERATION:
 
 # How many nearest data points to use for the local fit 
-num_data_points = 2
+num_data_points = 3
 
 
 theurl <- getURL("https://en.wikipedia.org/wiki/Ontario_general_election,_2018", ssl.verifyPeer=FALSE)
 tables <- readHTMLTable(theurl)
 
 #get the nth tables on the page
-df <- tables[[25]]
+df <- tables[[24]]
 
 # Remove empty rows (wikipedia tables sometime use empty rows for spacing)
 df <- df[!apply(df == "", 1, all),]
